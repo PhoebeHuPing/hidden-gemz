@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+#app {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.modal-scroll {
+  overflow-y: scroll;
+  padding-right: 24px;
+}
+
+/* Scrollbar width (very thin like iOS) */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track is invisible (iOS feel) */
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 14px 0;
+}
+
+/* Thumb = floating indicator */
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(36, 37, 37, 0.35); 
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
