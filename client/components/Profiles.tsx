@@ -136,12 +136,12 @@ export default function Profiles() {
           </div>
         }
         subtitle={
-          isOwnProfile ? 'Your corner of HiddenGemz' : `Explore ${profileName}'s HiddenGemz`
+          isOwnProfile ? 'Your corner of Hiddengemz' : `Explore ${profileName}'s Hiddengemz`
         }
         secondarySubtitle={
           isOwnProfile
             ? 'Manage your posts and favourite spots'
-            : `Discover all the local gems shared by ${profileName}`
+            : `Discover all the local gemz shared by ${profileName}`
         }
       />
 
