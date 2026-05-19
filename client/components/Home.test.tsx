@@ -17,7 +17,7 @@ const mockPosts = [
     venue_type: 'Cafe',
     tags: 'cafe',
     image_url: 'img1.jpg',
-    created_at: new Date().toISOString()
+    created_at: new Date().toISOString(),
   },
   {
     id: 2,
@@ -26,23 +26,23 @@ const mockPosts = [
     venue_type: 'Bar',
     tags: 'beer',
     image_url: 'img2.jpg',
-    created_at: new Date().toISOString()
-  }
+    created_at: new Date().toISOString(),
+  },
 ]
 
 describe('Home', () => {
   beforeEach(() => {
     vi.mocked(useAuth0).mockReturnValue({
       isAuthenticated: false,
-      getAccessTokenSilently: vi.fn()
+      getAccessTokenSilently: vi.fn(),
     } as any)
-    
+
     vi.mocked(postsApi.getPosts).mockResolvedValue(mockPosts as any)
   })
 
   it('renders loading state initially', () => {
     renderWithProviders(<Home />)
-    expect(screen.getByText(/Finding gems.../i)).toBeInTheDocument()
+    expect(screen.getByText(/Finding gemz.../i)).toBeInTheDocument()
   })
 
   it('renders posts after loading', async () => {

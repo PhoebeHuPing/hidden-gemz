@@ -5,7 +5,7 @@ import Loading from './Loading'
 describe('Loading', () => {
   it('renders loading text', () => {
     render(<Loading />)
-    const loadingText = screen.getByText(/Finding gems.../i)
+    const loadingText = screen.getByText(/Finding gemz.../i)
     expect(loadingText).toBeInTheDocument()
   })
 })
