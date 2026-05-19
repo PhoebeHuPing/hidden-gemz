@@ -57,7 +57,7 @@ describe('Home', () => {
     vi.mocked(postsApi.getPosts).mockResolvedValue([])
     renderWithProviders(<Home />)
     await waitFor(() => {
-      expect(screen.getByText(/No matching gems found/i)).toBeInTheDocument()
+      expect(screen.getByText(/No matching gemz found/i)).toBeInTheDocument()
     })
   })
 })
