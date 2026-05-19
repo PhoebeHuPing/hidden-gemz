@@ -3,25 +3,29 @@ import db from './connection.ts'
 
 // GET all posts
 export async function getAllPosts() {
-  const posts = await db('post')
-    .leftJoin('favourites', 'post.id', 'favourites.post_id')
+  return db('post')
     .select('post.*')
-    .count('favourites.id as favourite_count')
-    .groupBy('post.id')
+    .select(
+      db('favourites')
+        .count('id')
+        .whereRaw('favourites.post_id = post.id')
+        .as('favourite_count'),
+    )
     .orderBy('post.created_at', 'desc')
-  return posts
 }
 
 // GET post by id
 export async function getPostById(id: number | string) {
-  const post = await db('post')
-    .leftJoin('favourites', 'post.id', 'favourites.post_id')
+  return db('post')
     .where('post.id', id)
     .select('post.*')
-    .count('favourites.id as favourite_count')
-    .groupBy('post.id')
+    .select(
+      db('favourites')
+        .count('id')
+        .whereRaw('favourites.post_id = post.id')
+        .as('favourite_count'),
+    )
     .first()
-  return post
 }
 
 // CREATE post
@@ -43,10 +47,13 @@ export async function deletePost(id: number | string) {
 // GET posts by creator name
 export async function getPostsByCreator(name: string) {
   return db('post')
-    .leftJoin('favourites', 'post.id', 'favourites.post_id')
     .where({ created_by: name })
     .select('post.*')
-    .count('favourites.id as favourite_count')
-    .groupBy('post.id')
+    .select(
+      db('favourites')
+        .count('id')
+        .whereRaw('favourites.post_id = post.id')
+        .as('favourite_count'),
+    )
     .orderBy('post.created_at', 'desc')
 }

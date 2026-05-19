@@ -18,10 +18,13 @@ export async function removeFavourite(userId: string, postId: number) {
 // GET full post objects for a user's favourites
 export async function getFavouritePosts(userId: string) {
   return db('post')
-    .join('favourites as f1', 'post.id', 'f1.post_id')
-    .leftJoin('favourites as f2', 'post.id', 'f2.post_id')
-    .where('f1.user_id', userId)
+    .join('favourites', 'post.id', 'favourites.post_id')
+    .where('favourites.user_id', userId)
     .select('post.*')
-    .count('f2.id as favourite_count')
-    .groupBy('post.id')
+    .select(
+      db('favourites as f2')
+        .count('id')
+        .whereRaw('f2.post_id = post.id')
+        .as('favourite_count'),
+    )
 }
