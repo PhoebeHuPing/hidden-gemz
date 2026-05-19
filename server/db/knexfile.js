@@ -1,5 +1,9 @@
 import * as Path from 'node:path'
 import * as URL from 'node:url'
+import dotenv from 'dotenv'
+
+// Load .env from the root directory
+dotenv.config({ path: Path.join(Path.dirname(URL.fileURLToPath(import.meta.url)), '../../.env') })
 
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
@@ -35,7 +39,10 @@ export default {
 
   production: {
     client: 'postgresql',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    },
     pool: {
       min: 2,
       max: 10,
