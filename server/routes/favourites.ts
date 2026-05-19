@@ -9,16 +9,14 @@ const router = Router()
 // Get all favourite post IDs for the authenticated user
 router.get('/', checkJwt, async (req: JwtRequest, res) => {
   const userId = req.auth?.sub
-  console.log(userId)
+
   if (!userId) {
     return res.sendStatus(StatusCodes.UNAUTHORIZED)
   }
 
   try {
-    console.log(userId)
     const favourites = await db.getFavourites(userId)
     // Return just the post_id array
-    console.log(favourites)
     res.json(favourites.map((f) => f.post_id))
   } catch (error) {
     console.error('Error in GET /api/v1/favourites:', error)

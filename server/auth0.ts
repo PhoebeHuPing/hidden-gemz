@@ -3,9 +3,10 @@ import { Request } from 'express'
 import { ParamsDictionary } from 'express-serve-static-core'
 import { JwtPayload } from 'jsonwebtoken'
 import jwks from 'jwks-rsa'
+import 'dotenv/config'
 
-const domain = 'https://phoebe-raumati-2026.au.auth0.com'
-const audience = 'https://hidden-gems/api'
+const domain = process.env.AUTH0_DOMAIN
+const audience = process.env.AUTH0_AUDIENCE
 
 const checkJwt = jwt({
   secret: jwks.expressJwtSecret({
