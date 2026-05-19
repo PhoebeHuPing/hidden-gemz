@@ -18,8 +18,11 @@ router.get('/', checkJwt, async (req: JwtRequest, res) => {
     // Return just the post_id array
     res.json(favourites.map((f) => f.post_id))
   } catch (error) {
-    console.error(error)
-    res.sendStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+    console.error('Error in GET /api/v1/favourites:', error)
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ 
+      error: 'Failed to fetch favourites',
+      details: error instanceof Error ? error.message : String(error)
+    })
   }
 })
 

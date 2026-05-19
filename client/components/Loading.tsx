@@ -8,7 +8,7 @@ function Loading() {
         alt="Loading"
         className="h-24 w-24 animate-spin-slow"
       />
-      <p className="mt-4 text-lg text-teal-400 font-bold">Loading...</p>
+      <p className="mt-4 text-lg text-teal-400 font-bold">Finding gems...</p>
     </div>
   );
 }
