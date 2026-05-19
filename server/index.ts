@@ -1,5 +1,7 @@
-import server from './server.ts'
 import 'dotenv/config'
+console.log('AUTH0_DOMAIN', process.AUTH0_DOMAIN)
+console.log('AUTH0_AUDIENCE', process.AUTH0_AUDIENCE)
+import server from './server.ts'
 
 const PORT = process.env.PORT || 3000
 
