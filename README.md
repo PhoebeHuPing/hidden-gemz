@@ -2,13 +2,13 @@
   <img src="https://res.cloudinary.com/dnl6b6gaq/image/upload/v1776291443/ReadmeImage_mibsap.png" width="100%">
 </p>
 
-# Hiddengems 💎
+# Hiddengemz 💎
 
-Hiddengems is a full-stack community-driven platform designed to help you discover, share, and save the best local spots. Whether it's a quiet cafe, a bustling bar, or a hidden restaurant, Hiddengems connects you with authentic local experiences.
+Hiddengemz is a full-stack community-driven platform designed to help you discover, share, and save the best local spots. Whether it's a quiet cafe, a bustling bar, or a hidden restaurant, Hiddengemz connects you with authentic local experiences.
 
 ## 🚀 Features
 
--   **Discover:** Browse a curated list of local "gems" with detailed reviews and interactive maps.
+-   **Discover:** Browse a curated list of local "gemz" with detailed reviews and interactive maps.
 -   **Search & Filter:** Find exactly what you're looking for by suburb, venue type, or specific amenities (Pet Friendly, Vegan, Outdoor seating, etc.).
 -   **Community Contributions:** Share your own favourite spots by adding new posts with photos, reviews, and tags.
 -   **Personalized Profiles:** Track your own contributions and manage the spots you've shared.
@@ -39,8 +39,8 @@ Hiddengems is a full-stack community-driven platform designed to help you discov
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Raumati-2026/hidden-gems.git
-cd hidden-gems
+git clone https://github.com/Raumati-2026/hidden-gemz.git
+cd hidden-gemz
 ```
 
 ### 2. Install Dependencies
@@ -49,7 +49,7 @@ npm install
 ```
 
 ### 3. Database Setup
-Hiddengems uses Knex for migrations and seeds. 
+Hiddengemz uses Knex for migrations and seeds. 
 
 **Run Migrations:**
 ```bash
@@ -83,7 +83,7 @@ npm run dev
 
 ## 👥 Contributors
 
-Meet the team behind Hiddengems:
+Meet the team behind Hiddengemz:
 
 -   **Ciaran S** - [GitHub Profile](https://github.com/ciaran-slow)
 -   **Johnny C** - [GitHub Profile](https://github.com/johnny-cassin)

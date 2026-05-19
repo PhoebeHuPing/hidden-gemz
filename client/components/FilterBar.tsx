@@ -110,7 +110,7 @@ export default function FilterBar({
           <input
             id="search"
             type="text"
-            placeholder="Search gems..."
+            placeholder="Search gemz..."
             className="w-full rounded-xl border-2 border-teal-400 py-2 pl-4 pr-10 text-sm transition-focus focus:border-teal-400 focus:outline-none"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
