@@ -119,10 +119,10 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50">
-      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-lg border-4 border-teal-400">
+      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-lg border-4 border-teal-600">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Edit Hidden Gem</h2>
-          <button onClick={onClose} className="text-3xl text-gray-500">
+          <button onClick={onClose} className="text-3xl text-gray-600">
             &times;
           </button>
         </div>
@@ -133,6 +133,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="business_name"
             value={form.business_name}
             onChange={handleChange}
+            aria-label="Business name"
             placeholder="Business name"
             className="w-full rounded border p-2"
             required
@@ -143,6 +144,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="business_street"
             value={form.business_street}
             onChange={handleChange}
+            aria-label="Street"
             placeholder="Street"
             className="w-full rounded border p-2"
           />
@@ -151,6 +153,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="business_suburb"
             value={form.business_suburb}
             onChange={handleChange}
+            aria-label="Suburb"
             placeholder="Suburb"
             className="w-full rounded border p-2"
           />
@@ -159,6 +162,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="business_city"
             value={form.business_city}
             onChange={handleChange}
+            aria-label="City"
             placeholder="City"
             className="w-full rounded border p-2"
           />
@@ -168,6 +172,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="venue_type"
             value={form.venue_type}
             onChange={handleChange}
+            aria-label="Venue type"
             className="w-full rounded border p-2 bg-white"
             required
           >
@@ -183,6 +188,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             name="tags"
             value={form.tags}
             onChange={handleChange}
+            aria-label="Tags (comma separated)"
             placeholder="Tags (comma separated)"
             className="w-full rounded border p-2"
           />
@@ -193,11 +199,12 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
               name="review"
               value={form.review}
               onChange={handleChange}
+              aria-label="Your review"
               maxLength={200}
               placeholder="Your review..."
               className="w-full rounded border p-2 min-h-[100px]"
             />
-            <div className="text-right text-xs text-gray-400 mt-1">
+            <div className="text-right text-xs text-gray-600 mt-1">
               {form.review.length}/200 characters
             </div>
           </div>
@@ -223,7 +230,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
                 )
                 widget.open()
               }}
-              className="w-full rounded bg-teal-500 py-2 text-white hover:bg-teal-600 transition-colors"
+              className="w-full rounded bg-teal-600 py-2 text-white hover:bg-teal-700 transition-colors"
             >
               Update Photo
             </button>
@@ -274,7 +281,7 @@ function EditPostForm({ post, isOpen, onClose }: Props) {
             <button
               type="submit"
               disabled={editPostMutation.isPending}
-              className="rounded bg-teal-400 px-4 py-2 text-white"
+              className="rounded bg-teal-600 px-4 py-2 text-white font-bold"
             >
               {editPostMutation.isPending ? 'Updating...' : 'Save Changes'}
             </button>

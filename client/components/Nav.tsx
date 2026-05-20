@@ -60,7 +60,7 @@ function Nav({ onAddPostClick }: Props) {
       <div className="flex items-center gap-2">
         <img
           src={logo}
-          alt="HiddenGemz Logo"
+          alt=""
           className="h-12"
           onClick={() => handleClick('/')}
         />
@@ -68,13 +68,13 @@ function Nav({ onAddPostClick }: Props) {
           onClick={() => handleClick('/')}
           className="hidden text-xl font-bold text-blue-800 md:block "
         >
-          Hidden<span className="text-teal-400">Gemz</span>
+          Hidden<span className="text-teal-600">Gemz</span>
         </button>
       </div>
       <div className="flex items-center gap-2">
         {!user ? (
           <button
-            className="text-teal-400 transition hover:text-teal-600"
+            className="text-teal-700 font-semibold transition hover:text-teal-800"
             onClick={handleSignIn}
           >
             Login/Sign Up
@@ -82,7 +82,7 @@ function Nav({ onAddPostClick }: Props) {
         ) : (
           <>
             <button
-              className="rounded-xl bg-teal-400 px-4 py-2 font-bold text-white transition hover:bg-teal-600"
+              className="rounded-xl bg-teal-600 px-4 py-2 font-bold text-white transition hover:bg-teal-700"
               onClick={onAddPostClick}
             >
               + Post
@@ -101,7 +101,7 @@ function Nav({ onAddPostClick }: Props) {
             </button>
 
             <button
-              className="font-medium text-teal-400 transition hover:text-teal-600"
+              className="font-semibold text-teal-700 transition hover:text-teal-800"
               onClick={handleSignOut}
             >
               Logout

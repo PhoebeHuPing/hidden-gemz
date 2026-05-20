@@ -128,7 +128,7 @@ export default function Profiles() {
           <div className="flex flex-col items-center gap-4">
             <div>
               {isOwnProfile ? 'Welcome,' : ''}{' '}
-              <span className="block text-teal-400 md:inline">
+              <span className="block text-teal-600 md:inline">
                 {profileName}
               </span>
             </div>
@@ -139,7 +139,7 @@ export default function Profiles() {
                 className={`rounded-full px-8 py-2 text-lg font-bold transition-all ${
                   isFollowingUser
                     ? 'bg-gray-200 text-gray-700 hover:bg-red-100 hover:text-red-600'
-                    : 'bg-teal-500 text-white shadow-lg hover:bg-teal-600'
+                    : 'bg-teal-600 text-white shadow-lg hover:bg-teal-700'
                 }`}
               >
                 {followMutation.isPending
@@ -167,7 +167,7 @@ export default function Profiles() {
         {/* Following Section (Only shown on own profile) */}
         {isOwnProfile && followingList && followingList.length > 0 && (
           <section className="border-b py-8">
-            <h2 className="mb-6 text-3xl font-bold text-teal-500">
+            <h2 className="mb-6 text-3xl font-bold text-teal-700">
               Users You Follow
             </h2>
             <div className="flex flex-wrap gap-6">
@@ -181,10 +181,10 @@ export default function Profiles() {
                     <img
                       src={follow.followed_image}
                       alt={follow.followed_username}
-                      className="h-20 w-20 rounded-full border-4 border-transparent object-cover transition-all group-hover:border-teal-400"
+                      className="h-20 w-20 rounded-full border-4 border-transparent object-cover transition-all group-hover:border-teal-600"
                     />
                   </div>
-                  <span className="font-semibold transition-colors group-hover:text-teal-500">
+                  <span className="font-semibold transition-colors group-hover:text-teal-700">
                     {follow.followed_username}
                   </span>
                 </div>
@@ -195,7 +195,7 @@ export default function Profiles() {
 
         {/* My Posts Section */}
         <section className="py-8">
-          <h2 className="mb-6 text-3xl font-bold text-teal-500">
+          <h2 className="mb-6 text-3xl font-bold text-teal-700">
             {isOwnProfile ? 'My Posts' : `${profileName}'s Posts`}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -227,7 +227,7 @@ export default function Profiles() {
         {/* Favourite Posts Section - Only shown on own profile */}
         {isOwnProfile && (
           <section className="border-t py-8">
-            <h2 className="mb-6 text-3xl font-bold text-teal-500">
+            <h2 className="mb-6 text-3xl font-bold text-teal-700">
               My Favourites
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
