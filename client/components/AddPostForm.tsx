@@ -69,6 +69,10 @@ const initialState: Omit<
 
 function AddPostForm({ isOpen, onClose }: Props) {
   const { user, getAccessTokenSilently } = useAuth0()
+  const fullName = user?.name || ''
+  const [firstName, ...rest] = fullName.split(' ')
+  const lastName = rest.join(' ')
+
   const queryClient = useQueryClient()
 
   const [form, setForm] = useState(initialState)
@@ -98,7 +102,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
       const newPost: PostData = {
         ...form,
         user_id: user.sub,
-        created_by: user?.given_name + ' ' + user?.family_name,
+        created_by: firstName + ' ' + lastName,
         created_at: new Date().toISOString(),
         created_by_image: user.picture || '',
       }
@@ -122,7 +126,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white p-6 shadow-lg border-4 border-teal-400">
+      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg border-4 border-teal-400 bg-white p-6 shadow-lg">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Add a New Hidden Gem</h2>
           <button onClick={onClose} className="text-3xl text-gray-500">
@@ -170,10 +174,12 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="venue_type"
             value={form.venue_type}
             onChange={handleChange}
-            className="w-full rounded border p-2 bg-white"
+            className="w-full rounded border bg-white p-2"
             required
           >
-            <option value="" disabled>Select a venue type...</option>
+            <option value="" disabled>
+              Select a venue type...
+            </option>
             <option value="Cafe">Cafe</option>
             <option value="Bar">Bar</option>
             <option value="Restaurant">Restaurant</option>
@@ -197,9 +203,9 @@ function AddPostForm({ isOpen, onClose }: Props) {
               onChange={handleChange}
               maxLength={200}
               placeholder="Your review..."
-              className="w-full rounded border p-2 min-h-[100px]"
+              className="min-h-[100px] w-full rounded border p-2"
             />
-            <div className="text-right text-xs text-gray-400 mt-1">
+            <div className="mt-1 text-right text-xs text-gray-400">
               {form.review.length}/200 characters
             </div>
           </div>
@@ -222,11 +228,11 @@ function AddPostForm({ isOpen, onClose }: Props) {
                       }))
                     }
                   },
-                  )
+                )
 
                 widget.open()
               }}
-              className="w-full rounded bg-teal-500 py-2 text-white hover:bg-teal-600 transition-colors"
+              className="w-full rounded bg-teal-500 py-2 text-white transition-colors hover:bg-teal-600"
             >
               Upload Photo
             </button>
@@ -240,7 +246,9 @@ function AddPostForm({ isOpen, onClose }: Props) {
                 />
                 <button
                   type="button"
-                  onClick={() => setForm((prev) => ({ ...prev, image_url: '' }))}
+                  onClick={() =>
+                    setForm((prev) => ({ ...prev, image_url: '' }))
+                  }
                   className="absolute right-2 top-2 rounded-full bg-red-500 p-1 text-white shadow hover:bg-red-600"
                 >
                   &times;
