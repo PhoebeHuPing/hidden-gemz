@@ -58,10 +58,15 @@ function Nav({ onAddPostClick }: Props) {
   return (
     <nav className="flex  justify-between border-b-2 p-6">
       <div className="flex items-center gap-2">
-        <img src={logo} alt="HiddenGemz Logo" className="h-12" onClick={() => handleClick('/')}/>
+        <img
+          src={logo}
+          alt="HiddenGemz Logo"
+          className="h-12"
+          onClick={() => handleClick('/')}
+        />
         <button
           onClick={() => handleClick('/')}
-          className="text-xl font-bold text-blue-800 hidden md:block "
+          className="hidden text-xl font-bold text-blue-800 md:block "
         >
           Hidden<span className="text-teal-400">Gemz</span>
         </button>
@@ -90,7 +95,7 @@ function Nav({ onAddPostClick }: Props) {
             >
               <img
                 src={user.picture}
-                alt={user.given_name}
+                alt={user.name}
                 className="h-12 rounded-full"
               />
             </button>

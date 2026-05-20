@@ -22,7 +22,7 @@ export default function Profiles() {
     getAccessTokenSilently,
   } = useAuth0()
 
-  const currentUserName = user?.given_name + ' ' + user?.family_name
+  const currentUserName = user?.name || ''
   const isOwnProfile = !name || name === currentUserName
   const profileName = name || currentUserName
 
@@ -65,7 +65,11 @@ export default function Profiles() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['follows'] })
-      toast.success(isFollowingUser ? `Unfollowed ${profileName}` : `Following ${profileName}`)
+      toast.success(
+        isFollowingUser
+          ? `Unfollowed ${profileName}`
+          : `Following ${profileName}`,
+      )
     },
   })
 
@@ -102,11 +106,17 @@ export default function Profiles() {
     enabled: isAuthenticated,
   })
 
-  if (authLoading || postsLoading || (isOwnProfile && (favouritesLoading || followingLoading))) {
+  if (
+    authLoading ||
+    postsLoading ||
+    (isOwnProfile && (favouritesLoading || followingLoading))
+  ) {
     return <Loading />
   }
   if (postsError || (isOwnProfile && favouritesError)) {
-    return <div className="p-8 text-center text-red-500">Failed to load data.</div>
+    return (
+      <div className="p-8 text-center text-red-500">Failed to load data.</div>
+    )
   }
 
   return (
@@ -118,7 +128,9 @@ export default function Profiles() {
           <div className="flex flex-col items-center gap-4">
             <div>
               {isOwnProfile ? 'Welcome,' : ''}{' '}
-              <span className="block text-teal-400 md:inline">{profileName}</span>
+              <span className="block text-teal-400 md:inline">
+                {profileName}
+              </span>
             </div>
             {!isOwnProfile && isAuthenticated && profileOwnerId && (
               <button
@@ -127,16 +139,22 @@ export default function Profiles() {
                 className={`rounded-full px-8 py-2 text-lg font-bold transition-all ${
                   isFollowingUser
                     ? 'bg-gray-200 text-gray-700 hover:bg-red-100 hover:text-red-600'
-                    : 'bg-teal-500 text-white hover:bg-teal-600 shadow-lg'
+                    : 'bg-teal-500 text-white shadow-lg hover:bg-teal-600'
                 }`}
               >
-                {followMutation.isPending ? '...' : isFollowingUser ? 'Following' : 'Follow'}
+                {followMutation.isPending
+                  ? '...'
+                  : isFollowingUser
+                    ? 'Following'
+                    : 'Follow'}
               </button>
             )}
           </div>
         }
         subtitle={
-          isOwnProfile ? 'Your corner of Hiddengemz' : `Explore ${profileName}'s Hiddengemz`
+          isOwnProfile
+            ? 'Your corner of HiddenGemz'
+            : `Explore ${profileName}'s HiddenGemz`
         }
         secondarySubtitle={
           isOwnProfile
@@ -148,23 +166,25 @@ export default function Profiles() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Following Section (Only shown on own profile) */}
         {isOwnProfile && followingList && followingList.length > 0 && (
-          <section className="py-8 border-b">
-            <h2 className="mb-6 text-3xl font-bold text-teal-500">Users You Follow</h2>
+          <section className="border-b py-8">
+            <h2 className="mb-6 text-3xl font-bold text-teal-500">
+              Users You Follow
+            </h2>
             <div className="flex flex-wrap gap-6">
               {followingList.map((follow: Follow) => (
                 <div
                   key={follow.followed_id}
-                  className="flex flex-col items-center gap-2 group cursor-pointer"
+                  className="group flex cursor-pointer flex-col items-center gap-2"
                   onClick={() => navigate(`/user/${follow.followed_username}`)}
                 >
                   <div className="relative">
                     <img
                       src={follow.followed_image}
                       alt={follow.followed_username}
-                      className="h-20 w-20 rounded-full object-cover border-4 border-transparent group-hover:border-teal-400 transition-all"
+                      className="h-20 w-20 rounded-full border-4 border-transparent object-cover transition-all group-hover:border-teal-400"
                     />
                   </div>
-                  <span className="font-semibold group-hover:text-teal-500 transition-colors">
+                  <span className="font-semibold transition-colors group-hover:text-teal-500">
                     {follow.followed_username}
                   </span>
                 </div>
@@ -189,8 +209,16 @@ export default function Profiles() {
               ))
             ) : (
               <NoResults
-                message={isOwnProfile ? "You haven't created any posts yet" : `${profileName} hasn't created any posts yet`}
-                subMessage={isOwnProfile ? "Share your first local gem with the community!" : "Check back later for some local gemz!"}
+                message={
+                  isOwnProfile
+                    ? "You haven't created any posts yet"
+                    : `${profileName} hasn't created any posts yet`
+                }
+                subMessage={
+                  isOwnProfile
+                    ? 'Share your first local gem with the community!'
+                    : 'Check back later for some local gemz!'
+                }
               />
             )}
           </div>
@@ -198,7 +226,7 @@ export default function Profiles() {
 
         {/* Favourite Posts Section - Only shown on own profile */}
         {isOwnProfile && (
-          <section className="py-8 border-t">
+          <section className="border-t py-8">
             <h2 className="mb-6 text-3xl font-bold text-teal-500">
               My Favourites
             </h2>
@@ -212,9 +240,9 @@ export default function Profiles() {
                   />
                 ))
               ) : (
-                <NoResults 
-                  message="You haven't favourited any gemz yet" 
-                  subMessage="Browse the home page to find and save your favourite spots!" 
+                <NoResults
+                  message="You haven't favourited any gemz yet"
+                  subMessage="Browse the home page to find and save your favourite spots!"
                 />
               )}
             </div>

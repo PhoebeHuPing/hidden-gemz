@@ -2,9 +2,9 @@
   <img src="https://res.cloudinary.com/dnl6b6gaq/image/upload/v1776291443/ReadmeImage_mibsap.png" width="100%">
 </p>
 
-# Hiddengemz 💎
+# HiddenGemz 💎
 
-Hiddengemz is a full-stack community-driven platform designed to help you discover, share, and save the best local spots. Whether it's a quiet cafe, a bustling bar, or a hidden restaurant, Hiddengemz connects you with authentic local experiences.
+HiddenGemz is a full-stack community-driven platform designed to help you discover, share, and save the best local spots. Whether it's a quiet cafe, a bustling bar, or a hidden restaurant, HiddenGemz connects you with authentic local experiences.
 
 ## 🚀 Features
 
@@ -49,7 +49,7 @@ npm install
 ```
 
 ### 3. Database Setup
-Hiddengemz uses Knex for migrations and seeds. 
+HiddenGemz uses Knex for migrations and seeds. 
 
 **Run Migrations:**
 ```bash
@@ -83,7 +83,7 @@ npm run dev
 
 ## 👥 Contributors
 
-Meet the team behind Hiddengemz:
+Meet the team behind HiddenGemz:
 
 -   **Ciaran S** - [GitHub Profile](https://github.com/ciaran-slow)
 -   **Johnny C** - [GitHub Profile](https://github.com/johnny-cassin)

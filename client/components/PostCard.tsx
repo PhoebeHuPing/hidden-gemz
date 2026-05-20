@@ -140,7 +140,7 @@ function PostCard({ post, isFavourite }: Props) {
             />
             <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center gap-1">
               <Favourite post={post} isFavourite={isFavourite} />
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm shadow-md">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 shadow-md backdrop-blur-sm">
                 <span className="text-sm font-bold text-white">
                   {post.favourite_count}
                 </span>
@@ -179,14 +179,14 @@ function PostCard({ post, isFavourite }: Props) {
                 />
               </button>
               <h2
-                className="font-semibold cursor-pointer hover:underline"
+                className="cursor-pointer font-semibold hover:underline"
                 onClick={handleAuthorClick}
               >
                 {post.created_by}
               </h2>
             </div>
 
-            <p className="font-light text-sm">
+            <p className="text-sm font-light">
               {formatDistanceToNow(new Date(post.created_at), {
                 addSuffix: true,
               })}
@@ -213,7 +213,7 @@ function PostCard({ post, isFavourite }: Props) {
 
               <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center gap-1">
                 <Favourite post={post} isFavourite={isFavourite} />
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm shadow-md">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 shadow-md backdrop-blur-sm">
                   <span className="text-sm font-bold text-white">
                     {post.favourite_count}
                   </span>
@@ -240,7 +240,7 @@ function PostCard({ post, isFavourite }: Props) {
               {post.venue_type}
             </h2>
 
-            <div className="mt-3 mb-3 flex flex-wrap gap-2">
+            <div className="mb-3 mt-3 flex flex-wrap gap-2">
               {post.tags.split(',').map((tag) => (
                 <span
                   key={tag.trim()}
@@ -280,11 +280,11 @@ function PostCard({ post, isFavourite }: Props) {
                 <img
                   src={post.created_by_image}
                   alt={post.created_by}
-                  className="h-12 w-12 rounded-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-12 w-12 cursor-pointer rounded-full object-cover transition-opacity hover:opacity-80"
                   onClick={handleAuthorClick}
                 />
                 <p
-                  className="font-semibold cursor-pointer hover:text-teal-500 hover:underline transition-colors"
+                  className="cursor-pointer font-semibold transition-colors hover:text-teal-500 hover:underline"
                   onClick={handleAuthorClick}
                 >
                   {post.created_by}

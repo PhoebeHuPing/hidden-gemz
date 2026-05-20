@@ -21,7 +21,7 @@ function Hero({
   subtitle = 'Find your next spot!',
   secondarySubtitle = (
     <>
-      Reviews of all the best local <span className="text-teal-400">gemz</span>
+      Reviews of all the best local <span className="text-teal-400">Gemz</span>
     </>
   ),
   showBackButton = false, // Default to false
@@ -30,7 +30,7 @@ function Hero({
 
   return (
     <div
-      className="relative flex h-[560px] md:h-[500px] items-center justify-center" // Add relative for absolute positioning of back button
+      className="relative flex h-[560px] items-center justify-center md:h-[500px]" // Add relative for absolute positioning of back button
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url(${herobg})`,
         backgroundSize: 'cover',
@@ -40,13 +40,14 @@ function Hero({
       {showBackButton && (
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-4 left-4 flex items-center text-white text-lg hover:text-teal-400 transition-colors"
+          className="absolute left-4 top-4 flex items-center text-lg text-white transition-colors hover:text-teal-400"
         >
-          <IoIosArrowBack className="mr-2 text-2xl" /> {/* Use IoIosArrowBack */}
+          <IoIosArrowBack className="mr-2 text-2xl" />{' '}
+          {/* Use IoIosArrowBack */}
           Back
         </button>
       )}
-      <div className="flex flex-col items-center text-center px-4">
+      <div className="flex flex-col items-center px-4 text-center">
         {showLogo && <img src={logo} alt="HiddenGemz Logo" className="h-60" />}
         <h1 className="cursor-pointer text-6xl font-bold text-blue-800">
           {title}
