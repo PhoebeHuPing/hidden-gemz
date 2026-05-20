@@ -10,7 +10,7 @@ export default function GoogleMap({ street, suburb, city }: Props) {
   
   if (!apiKey) {
     return (
-      <div className="flex h-64 w-full items-center justify-center rounded-xl bg-gray-100 text-sm text-gray-500">
+      <div className="flex h-64 w-full items-center justify-center rounded-xl bg-gray-100 text-sm text-gray-600 font-medium px-4 text-center">
         Google Maps API key is missing. Please add it to your .env file.
       </div>
     )

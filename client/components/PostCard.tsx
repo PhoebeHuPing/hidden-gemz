@@ -104,7 +104,7 @@ function PostCard({ post, isFavourite }: Props) {
             setIsOpen(true)
           }
         }}
-        className="relative block w-full cursor-pointer rounded-xl border-4 border-transparent p-6 text-left shadow-xl transition ease-linear hover:scale-105 hover:border-4 hover:border-teal-400 focus:border-teal-400 focus:outline-none"
+        className="relative block w-full cursor-pointer rounded-xl border-4 border-transparent p-6 text-left shadow-xl transition ease-linear hover:scale-105 hover:border-4 hover:border-teal-600 focus:border-teal-600 focus:outline-none"
       >
         <div>
           {/* Post Image & CRUD Icons - Edit & Delete*/}
@@ -112,7 +112,7 @@ function PostCard({ post, isFavourite }: Props) {
             <>
               <button
                 aria-label="Edit post"
-                className="absolute left-12 top-12 z-10 flex items-center justify-center rounded-full bg-teal-400 p-4 transition-transform hover:scale-110"
+                className="absolute left-12 top-12 z-10 flex items-center justify-center rounded-full bg-teal-600 p-4 transition-transform hover:scale-110"
                 onClick={(e) => {
                   e.stopPropagation()
                   setIsEditOpen(true)
@@ -123,7 +123,7 @@ function PostCard({ post, isFavourite }: Props) {
               <button
                 aria-label="Delete post"
                 onClick={handleDelete}
-                className="absolute right-12 top-12 z-10 flex items-center justify-center rounded-full bg-teal-400 p-4 transition-transform hover:scale-110"
+                className="absolute right-12 top-12 z-10 flex items-center justify-center rounded-full bg-teal-600 p-4 transition-transform hover:scale-110"
                 disabled={deleteMutation.isPending}
               >
                 <FaTrash className="text-2xl text-white" />
@@ -140,7 +140,7 @@ function PostCard({ post, isFavourite }: Props) {
             />
             <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center gap-1">
               <Favourite post={post} isFavourite={isFavourite} />
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 shadow-md backdrop-blur-sm">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/60 shadow-md backdrop-blur-sm">
                 <span className="text-sm font-bold text-white">
                   {post.favourite_count}
                 </span>
@@ -151,12 +151,12 @@ function PostCard({ post, isFavourite }: Props) {
           {/* Business Details */}
           <div className="flex items-end justify-between">
             <h2 className="text-2xl font-bold">{post.business_name}</h2>
-            <h2 className="font-bold text-teal-400">{post.business_suburb}</h2>
+            <h2 className="font-bold text-teal-600">{post.business_suburb}</h2>
           </div>
-          <h2 className="text-left font-bold capitalize text-teal-400">
+          <h2 className="text-left font-bold capitalize text-teal-600">
             {post.venue_type}
           </h2>
-          <p className="text-left font-light">{post.review}</p>
+          <p className="text-left">{post.review}</p>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {post.tags.split(',').map((tag) => (
@@ -170,7 +170,7 @@ function PostCard({ post, isFavourite }: Props) {
           </div>
 
           <div className="my-6 flex items-center justify-between">
-            <div className="flex items-center gap-2 transition hover:text-teal-600">
+            <div className="flex items-center gap-2 transition hover:text-teal-700">
               <button onClick={handleAuthorClick}>
                 <img
                   src={post.created_by_image}
@@ -186,7 +186,7 @@ function PostCard({ post, isFavourite }: Props) {
               </h2>
             </div>
 
-            <p className="text-sm font-light">
+            <p className="text-sm text-gray-700">
               {formatDistanceToNow(new Date(post.created_at), {
                 addSuffix: true,
               })}
@@ -207,13 +207,13 @@ function PostCard({ post, isFavourite }: Props) {
             <div className="relative">
               <img
                 src={post.image_url}
-                alt={post.business_name}
+                alt={`Photo of ${post.business_name}`}
                 className="mb-6 h-80 w-full rounded-xl object-cover"
               />
 
               <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center gap-1">
                 <Favourite post={post} isFavourite={isFavourite} />
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 shadow-md backdrop-blur-sm">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/60 shadow-md backdrop-blur-sm">
                   <span className="text-sm font-bold text-white">
                     {post.favourite_count}
                   </span>
@@ -221,7 +221,7 @@ function PostCard({ post, isFavourite }: Props) {
               </div>
 
               <button
-                className="absolute right-[12px] top-[12px] rounded-lg bg-teal-400 px-4 py-2 text-white"
+                className="absolute right-[12px] top-[12px] rounded-lg bg-teal-600 px-4 py-2 text-white"
                 onClick={() => setIsOpen(false)}
               >
                 Close
@@ -230,13 +230,13 @@ function PostCard({ post, isFavourite }: Props) {
 
             <div className="flex items-end justify-between">
               <h2 className="text-3xl font-bold">{post.business_name}</h2>
-              <p>
+              <p className="text-gray-700 font-medium">
                 {post.business_street}, {post.business_suburb},{' '}
                 {post.business_city}
               </p>
             </div>
 
-            <h2 className="mb-3 font-bold capitalize text-teal-400">
+            <h2 className="mb-3 font-bold capitalize text-teal-600">
               {post.venue_type}
             </h2>
 
@@ -279,19 +279,19 @@ function PostCard({ post, isFavourite }: Props) {
               <div className="flex items-center gap-2">
                 <img
                   src={post.created_by_image}
-                  alt={post.created_by}
+                  alt={`${post.created_by}'s avatar`}
                   className="h-12 w-12 cursor-pointer rounded-full object-cover transition-opacity hover:opacity-80"
                   onClick={handleAuthorClick}
                 />
                 <p
-                  className="cursor-pointer font-semibold transition-colors hover:text-teal-500 hover:underline"
+                  className="cursor-pointer font-semibold transition-colors hover:text-teal-700 hover:underline"
                   onClick={handleAuthorClick}
                 >
                   {post.created_by}
                 </p>
               </div>
 
-              <p className="font-light">
+              <p className="text-gray-700 font-medium">
                 {formatDistanceToNow(new Date(post.created_at), {
                   addSuffix: true,
                 })}

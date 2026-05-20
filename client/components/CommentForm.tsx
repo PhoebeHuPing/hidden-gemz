@@ -74,7 +74,7 @@ export default function CommentForm({ postId }: Props) {
   if (!isAuthenticated) {
     return (
       <div className="py-4 border-t mt-6">
-        <p className="text-sm text-gray-500 italic text-center">
+        <p className="text-sm text-gray-600 italic text-center">
           Please log in to leave a comment.
         </p>
       </div>
@@ -93,19 +93,20 @@ export default function CommentForm({ postId }: Props) {
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            aria-label="Write a comment"
             placeholder="Write a comment..."
             maxLength={200}
-            className="w-full rounded-xl border border-gray-300 p-3 text-sm focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all resize-none"
+            className="w-full rounded-xl border border-gray-300 p-3 text-sm focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none transition-all resize-none"
             rows={2}
           />
           <div className="flex justify-between items-center mt-2">
-            <span className={`text-xs ${content.length >= 190 ? 'text-red-500 font-medium' : 'text-gray-400'}`}>
+            <span className={`text-xs ${content.length >= 190 ? 'text-red-500 font-medium' : 'text-gray-600'}`}>
               {content.length}/200
             </span>
             <button
               type="submit"
               disabled={addMutation.isPending || content.trim() === ''}
-              className="bg-teal-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-600 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
             >
               Post Comment
             </button>

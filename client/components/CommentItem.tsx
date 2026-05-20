@@ -130,7 +130,7 @@ export default function CommentItem({ comment }: Props) {
     <div className="flex gap-3 py-4 border-b last:border-0">
       <img
         src={comment.author_image}
-        alt={comment.author}
+        alt={`${comment.author}'s avatar`}
         className="h-10 w-10 rounded-full object-cover shrink-0 cursor-pointer transition hover:opacity-80"
         onClick={handleAuthorClick}
       />
@@ -138,12 +138,12 @@ export default function CommentItem({ comment }: Props) {
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span
-              className="font-semibold text-sm cursor-pointer hover:text-teal-500 hover:underline"
+              className="font-semibold text-sm cursor-pointer hover:text-teal-700 hover:underline"
               onClick={handleAuthorClick}
             >
               {comment.author}
             </span>
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-600">
               {comment.created_at && formatDistanceToNow(new Date(comment.created_at), { addSuffix: true })}
             </span>
           </div>
@@ -151,14 +151,14 @@ export default function CommentItem({ comment }: Props) {
             <div className="flex gap-2">
               <button
                 onClick={() => setIsEditing(true)}
-                className="text-gray-400 hover:text-teal-500 transition-colors"
+                className="text-gray-600 hover:text-teal-700 transition-colors"
                 aria-label="Edit comment"
               >
                 <FaPen size={14} />
               </button>
               <button
                 onClick={handleDelete}
-                className="text-gray-400 hover:text-red-500 transition-colors"
+                className="text-gray-600 hover:text-red-600 transition-colors"
                 aria-label="Delete comment"
                 disabled={deleteMutation.isPending}
               >
@@ -173,12 +173,13 @@ export default function CommentItem({ comment }: Props) {
             <textarea
               value={editContent}
               onChange={(e) => setEditContent(e.target.value)}
+              aria-label="Edit your comment"
               maxLength={200}
-              className="w-full rounded-lg border border-gray-300 p-2 text-sm focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none"
+              className="w-full rounded-lg border border-gray-300 p-2 text-sm focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none"
               rows={2}
             />
             <div className="flex justify-between items-center mt-1">
-              <span className={`text-xs ${editContent.length >= 190 ? 'text-red-500 font-medium' : 'text-gray-400'}`}>
+              <span className={`text-xs ${editContent.length >= 190 ? 'text-red-500 font-medium' : 'text-gray-600'}`}>
                 {editContent.length}/200
               </span>
               <div className="flex gap-2">
@@ -187,14 +188,14 @@ export default function CommentItem({ comment }: Props) {
                     setIsEditing(false)
                     setEditContent(comment.content)
                   }}
-                  className="p-1 text-gray-500 hover:text-gray-700"
+                  className="p-1 text-gray-600 hover:text-gray-800"
                 >
                   <FaXmark size={18} />
                 </button>
                 <button
                   onClick={handleUpdate}
                   disabled={updateMutation.isPending}
-                  className="p-1 text-teal-600 hover:text-teal-700"
+                  className="p-1 text-teal-700 hover:text-teal-800"
                 >
                   <FaCheck size={18} />
                 </button>

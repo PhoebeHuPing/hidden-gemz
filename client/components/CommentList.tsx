@@ -28,7 +28,7 @@ export default function CommentList({ postId }: Props) {
             <CommentItem key={comment.id} comment={comment} />
           ))
         ) : (
-          <p className="text-sm text-gray-500 text-center py-4">No comments yet. Be the first to share your thoughts!</p>
+          <p className="text-sm text-gray-600 text-center py-4">No comments yet. Be the first to share your thoughts!</p>
         )}
       </div>
 

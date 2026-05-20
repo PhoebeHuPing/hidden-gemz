@@ -126,10 +126,10 @@ function AddPostForm({ isOpen, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg border-4 border-teal-400 bg-white p-6 shadow-lg">
+      <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg border-4 border-teal-600 bg-white p-6 shadow-lg">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Add a New Hidden Gem</h2>
-          <button onClick={onClose} className="text-3xl text-gray-500">
+          <button onClick={onClose} className="text-3xl text-gray-600">
             &times;
           </button>
         </div>
@@ -140,6 +140,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="business_name"
             value={form.business_name}
             onChange={handleChange}
+            aria-label="Business name"
             placeholder="Business name"
             className="w-full rounded border p-2"
           />
@@ -149,6 +150,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="business_street"
             value={form.business_street}
             onChange={handleChange}
+            aria-label="Street"
             placeholder="Number and Street"
             className="w-full rounded border p-2"
           />
@@ -157,6 +159,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="business_suburb"
             value={form.business_suburb}
             onChange={handleChange}
+            aria-label="Suburb"
             placeholder="Suburb"
             className="w-full rounded border p-2"
           />
@@ -165,6 +168,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="business_city"
             value={form.business_city}
             onChange={handleChange}
+            aria-label="City"
             placeholder="City"
             className="w-full rounded border p-2"
           />
@@ -174,6 +178,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="venue_type"
             value={form.venue_type}
             onChange={handleChange}
+            aria-label="Venue type"
             className="w-full rounded border bg-white p-2"
             required
           >
@@ -191,6 +196,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             name="tags"
             value={form.tags}
             onChange={handleChange}
+            aria-label="Tags (comma separated)"
             placeholder="Tags (comma separated)"
             className="w-full rounded border p-2"
           />
@@ -201,11 +207,12 @@ function AddPostForm({ isOpen, onClose }: Props) {
               name="review"
               value={form.review}
               onChange={handleChange}
+              aria-label="Your review"
               maxLength={200}
               placeholder="Your review..."
               className="min-h-[100px] w-full rounded border p-2"
             />
-            <div className="mt-1 text-right text-xs text-gray-400">
+            <div className="mt-1 text-right text-xs text-gray-600">
               {form.review.length}/200 characters
             </div>
           </div>
@@ -232,7 +239,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
 
                 widget.open()
               }}
-              className="w-full rounded bg-teal-500 py-2 text-white transition-colors hover:bg-teal-600"
+              className="w-full rounded bg-teal-600 py-2 text-white transition-colors hover:bg-teal-700"
             >
               Upload Photo
             </button>
@@ -285,7 +292,7 @@ function AddPostForm({ isOpen, onClose }: Props) {
             <button
               type="submit"
               disabled={addPostMutation.isPending}
-              className="rounded bg-teal-400 px-4 py-2 text-white"
+              className="rounded bg-teal-600 px-4 py-2 text-white font-bold"
             >
               {addPostMutation.isPending ? 'Adding...' : 'Add Post'}
             </button>

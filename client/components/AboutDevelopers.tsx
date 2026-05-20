@@ -16,7 +16,7 @@ function AboutPage() {
         title={
           <>
             About the{' '}
-            <span className="block text-teal-400 md:inline">Developers</span>
+            <span className="block text-teal-600 md:inline">Developers</span>
           </>
         }
         subtitle="Meet the team behind HiddenGemz"
@@ -34,7 +34,7 @@ function AboutPage() {
             Our mission is to create a platform that connects people with unique
             and authentic local businesses.
           </p>
-          <h2 className="mb-4 mt-8 text-2xl font-semibold text-teal-500">
+          <h2 className="mb-4 mt-8 text-2xl font-semibold text-teal-700">
             Meet the Team
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -43,10 +43,10 @@ function AboutPage() {
               <img
                 src={ciaran}
                 alt="Ciaran S headshot"
-                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-400 object-cover object-top"
+                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="mb-3 font-semibold">Ciaran S</p>
-              <p className="text-left text-sm">
+              <p className="text-left text-sm text-gray-700">
                 I’m a full-stack dev who enjoys building web apps that are
                 clean, fast, and actually enjoyable to use. I spend most of my
                 time working with React and APIs, turning ideas into real
@@ -55,12 +55,12 @@ function AboutPage() {
                 the way—basically just trying to build cool stuff that works
                 well and looks good doing it.
               </p>
-              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-400">
+              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-600">
                 <a
                   href="https://github.com/ciaran-slow"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaGithub />
                 </a>
@@ -69,7 +69,7 @@ function AboutPage() {
                   href="https://www.linkedin.com/in/ciaran-slow-1a740a87/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaLinkedin />
                 </a>
@@ -79,10 +79,10 @@ function AboutPage() {
               <img
                 src={johnny}
                 alt="Johnny C headshot"
-                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-400 object-cover object-top"
+                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Johnny C</p>
-              <p className="text-left text-sm">
+              <p className="text-left text-sm text-gray-700">
                 I am a junior full-stack developer with a deep passion for
                 technology. My experience building computers, combined with a
                 background in data and analytics, inspired me to pursue a career
@@ -91,12 +91,12 @@ function AboutPage() {
                 various JavaScript technologies—including TypeScript—to develop
                 the HiddenGemz website you see today.
               </p>
-              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-400">
+              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-600">
                 <a
                   href="https://github.com/johnny-cassin"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaGithub />
                 </a>
@@ -105,7 +105,7 @@ function AboutPage() {
                   href="https://www.linkedin.com/in/johnny-cassin-82bb414a/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaLinkedin />
                 </a>
@@ -115,22 +115,22 @@ function AboutPage() {
               <img
                 src={jay}
                 alt="Jay H headshot"
-                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-400 object-cover object-top"
+                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Jay H</p>
-              <p className="text-left text-sm">
+              <p className="text-left text-sm text-gray-700">
                 I’m a junior full-stack developer who enjoys building clean,
                 functional web apps that are simple to use and actually useful.
                 I like experimenting with new tech, improving UI/UX, and
                 figuring things out as I go—always aiming to build projects that
                 work well, look good, and keep getting better each time.
               </p>
-              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-400">
+              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-600">
                 <a
                   href="https://github.com/JayHuston-Dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaGithub />
                 </a>
@@ -140,10 +140,10 @@ function AboutPage() {
               <img
                 src={phoebe}
                 alt="Phoebe H headshot"
-                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-400 object-cover object-top"
+                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Phoebe H</p>
-              <p className="text-left text-sm">
+              <p className="text-left text-sm text-gray-700">
                 I’m a junior full-stack developer wrapping up my training,
                 focused on building simple, functional web apps that actually
                 make sense to use. I’ve been working with React, APIs, and
@@ -153,12 +153,12 @@ function AboutPage() {
                 logic and the user experience—just trying to build things that
                 work well and keep getting better each time.
               </p>
-              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-400">
+              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-600">
                 <a
                   href="https://github.com/PhoebeHuPing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaGithub />
                 </a>
@@ -167,7 +167,7 @@ function AboutPage() {
                   href="https://www.linkedin.com/in/phoebe-hu-1a8a3b346/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaLinkedin />
                 </a>
@@ -177,22 +177,22 @@ function AboutPage() {
               <img
                 src={melia}
                 alt="Melia G headshot"
-                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-400 object-cover object-top"
+                className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Melia G</p>
-              <p className="text-left text-sm">
+              <p className="text-left text-sm text-gray-700">
                 I am a junior full-stack developer who enjoys focusing on
                 building simple, functional web apps that are useful. I have
                 been working with React, APIs and databases and enjoy working on
                 the backend of projects. I enjoy aesthetic projects and working
                 on things that are simple.
               </p>
-              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-400">
+              <div className="mt-auto flex gap-4 pt-4 text-5xl text-teal-600">
                 <a
                   href="https://github.com/melia-gratsounas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaGithub />
                 </a>
@@ -201,7 +201,7 @@ function AboutPage() {
                   href="https://www.linkedin.com/in/melia-gratsounas-11a895364/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer transition hover:text-teal-600"
+                  className="cursor-pointer transition hover:text-teal-800"
                 >
                   <FaLinkedin />
                 </a>

@@ -63,8 +63,8 @@ export default function AmmenitiesIcon({ type }: FeatureIconProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <Icon className="text-5xl text-teal-400" />
-      <p className="font-light text-center">{label}</p>
+      <Icon className="text-5xl text-teal-600" />
+      <p className="font-medium text-center">{label}</p>
     </div>
   )
 }

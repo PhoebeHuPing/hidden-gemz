@@ -28,7 +28,7 @@ function Favourite({ post, isFavourite }: Props) {
       <button
         aria-label={isFavourite ? 'Remove from favourites' : 'Add to favourites'}
         onClick={handleFavourite}
-        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-teal-400 shadow-md transition duration-150 hover:scale-110 active:scale-125 focus:outline-none focus:ring-2 focus:ring-white"
+        className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-teal-600 shadow-md transition duration-150 hover:scale-110 active:scale-125 focus:outline-none focus:ring-2 focus:ring-white"
       >
         <svg
           className="h-6 w-6"

@@ -48,7 +48,7 @@ export default function FilterBar({
             id="suburb"
             value={selectedSuburb}
             onChange={(e) => onSuburbChange(e.target.value)}
-            className="w-full flex-1 rounded-xl border-2 border-teal-400 px-4 py-2 text-sm transition-focus focus:border-teal-400 focus:outline-none md:w-auto md:flex-none"
+            className="w-full flex-1 rounded-xl border-2 border-teal-600 px-4 py-2 text-sm transition-focus focus:border-teal-600 focus:outline-none md:w-auto md:flex-none"
           >
             <option value="All">All Suburbs</option>
             {availableSuburbs.map((suburb) => (
@@ -71,7 +71,7 @@ export default function FilterBar({
             id="venue"
             value={selectedVenue}
             onChange={(e) => onVenueChange(e.target.value)}
-            className="w-full flex-1 rounded-xl border-2 border-teal-400 px-4 py-2 text-sm transition-focus focus:border-teal-400 focus:outline-none md:w-auto md:flex-none"
+            className="w-full flex-1 rounded-xl border-2 border-teal-600 px-4 py-2 text-sm transition-focus focus:border-teal-600 focus:outline-none md:w-auto md:flex-none"
           >
             <option value="All">All Types</option>
             {availableVenues.map((venue) => (
@@ -94,7 +94,7 @@ export default function FilterBar({
             id="tag"
             value={selectedTag}
             onChange={(e) => onTagChange(e.target.value)}
-            className="w-full flex-1 rounded-xl border-2 border-teal-400 px-4 py-2 text-sm transition-focus focus:border-teal-400 focus:outline-none md:w-auto md:flex-none"
+            className="w-full flex-1 rounded-xl border-2 border-teal-600 px-4 py-2 text-sm transition-focus focus:border-teal-600 focus:outline-none md:w-auto md:flex-none"
           >
             <option value="All">All Cuisines</option>
             {availableTags.map((tag) => (
@@ -110,17 +110,18 @@ export default function FilterBar({
           <input
             id="search"
             type="text"
+            aria-label="Search gemz"
             placeholder="Search gemz..."
-            className="w-full rounded-xl border-2 border-teal-400 py-2 pl-4 pr-10 text-sm transition-focus focus:border-teal-400 focus:outline-none"
+            className="w-full rounded-xl border-2 border-teal-600 py-2 pl-4 pr-10 text-sm transition-focus focus:border-teal-600 focus:outline-none"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
           />
-          <FaSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+          <FaSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none" />
         </div>
 
         {/* Amenities (Pills) */}
         <div className="flex w-full flex-col items-center justify-center gap-3 py-4 md:mt-2 md:flex-row">
-          <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+          <span className="text-sm font-semibold uppercase tracking-wider text-gray-600">
             Amenities
           </span>
           <div className="flex flex-wrap justify-center gap-2">
@@ -131,7 +132,7 @@ export default function FilterBar({
                 className={`whitespace-nowrap rounded-full border-2 px-4 py-2 text-sm font-medium transition-all ${
                   selectedTags.includes(tag)
                     ? 'border-teal-600 bg-teal-600 text-white shadow-md'
-                    : 'border-teal-400 bg-white text-teal-700 hover:bg-teal-50'
+                    : 'border-teal-600 bg-white text-teal-700 hover:bg-teal-50'
                 }`}
               >
                 {tag}

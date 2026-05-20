@@ -30,7 +30,7 @@ html {
 
 /* Thumb = floating indicator */
 .modal-scroll::-webkit-scrollbar-thumb {
-  background: rgba(36, 37, 37, 0.35); 
+  background: rgba(36, 37, 37, 0.7); 
   border-radius: 9999px;
   transition: background 0.2s ease;
 }
