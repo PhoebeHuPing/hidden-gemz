@@ -135,7 +135,7 @@ function PostCard({ post, isFavourite }: Props) {
           <div className="relative mb-6">
             <img
               src={post.image_url}
-              alt={post.business_name + ' avatar'}
+              alt=""
               className="h-[400px] w-full rounded-xl object-cover"
             />
             <div className="absolute bottom-4 right-4 z-10 flex flex-col items-center gap-1">
@@ -170,21 +170,19 @@ function PostCard({ post, isFavourite }: Props) {
           </div>
 
           <div className="my-6 flex items-center justify-between">
-            <div className="flex items-center gap-2 transition hover:text-teal-800">
-              <button onClick={handleAuthorClick}>
-                <img
-                  src={post.created_by_image}
-                  alt={post.created_by + ' avatar'}
-                  className="h-16 w-16 rounded-full object-cover"
-                />
-              </button>
-              <h2
-                className="cursor-pointer font-semibold text-gray-900 hover:underline hover:text-teal-700"
-                onClick={handleAuthorClick}
-              >
+            <button
+              onClick={handleAuthorClick}
+              className="flex items-center gap-2 transition hover:text-teal-800 group"
+            >
+              <img
+                src={post.created_by_image}
+                alt=""
+                className="h-16 w-16 rounded-full object-cover"
+              />
+              <span className="cursor-pointer font-semibold text-gray-900 group-hover:underline group-hover:text-teal-700">
                 {post.created_by}
-              </h2>
-            </div>
+              </span>
+            </button>
 
             <p className="text-sm font-medium text-gray-700">
               {formatDistanceToNow(new Date(post.created_at), {
@@ -207,7 +205,7 @@ function PostCard({ post, isFavourite }: Props) {
             <div className="relative">
               <img
                 src={post.image_url}
-                alt={`Photo of ${post.business_name}`}
+                alt=""
                 className="mb-6 h-80 w-full rounded-xl object-cover"
               />
 
@@ -276,20 +274,19 @@ function PostCard({ post, isFavourite }: Props) {
             </div>
 
             <div className="flex items-center justify-between border-t pt-4">
-              <div className="flex items-center gap-2">
+              <button
+                onClick={handleAuthorClick}
+                className="flex items-center gap-2 group"
+              >
                 <img
                   src={post.created_by_image}
-                  alt={`${post.created_by}'s avatar`}
-                  className="h-12 w-12 cursor-pointer rounded-full object-cover transition-opacity hover:opacity-80"
-                  onClick={handleAuthorClick}
+                  alt=""
+                  className="h-12 w-12 rounded-full object-cover transition-opacity group-hover:opacity-80"
                 />
-                <p
-                  className="cursor-pointer font-bold text-gray-900 transition-colors hover:text-teal-700 hover:underline"
-                  onClick={handleAuthorClick}
-                >
+                <p className="font-bold text-gray-900 transition-colors group-hover:text-teal-700 group-hover:underline">
                   {post.created_by}
                 </p>
-              </div>
+              </button>
 
               <p className="font-semibold text-gray-700">
                 {formatDistanceToNow(new Date(post.created_at), {
