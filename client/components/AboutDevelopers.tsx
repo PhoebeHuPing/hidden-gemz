@@ -42,7 +42,7 @@ function AboutPage() {
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 text-center shadow-xl">
               <img
                 src={ciaran}
-                alt="Ciaran S headshot"
+                alt=""
                 className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="mb-3 font-semibold">Ciaran S</p>
@@ -78,7 +78,7 @@ function AboutPage() {
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 text-center shadow-xl">
               <img
                 src={johnny}
-                alt="Johnny C headshot"
+                alt=""
                 className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Johnny C</p>
@@ -114,7 +114,7 @@ function AboutPage() {
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 text-center shadow-xl">
               <img
                 src={jay}
-                alt="Jay H headshot"
+                alt=""
                 className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Jay H</p>
@@ -139,7 +139,7 @@ function AboutPage() {
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 text-center shadow-xl">
               <img
                 src={phoebe}
-                alt="Phoebe H headshot"
+                alt=""
                 className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Phoebe H</p>
@@ -176,7 +176,7 @@ function AboutPage() {
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 text-center shadow-xl">
               <img
                 src={melia}
-                alt="Melia G headshot"
+                alt=""
                 className="mb-3 h-60 w-60 rounded-full border-4 border-teal-600 object-cover object-top"
               />
               <p className="font-semibold">Melia G</p>
