@@ -49,5 +49,5 @@ jobs:
          id: deploy-to-webapp
          uses: azure/webapps-deploy@v3
          with:
-           app-name: 'hidden-gemz.azurewebsites.net'
+           app-name: 'hidden-gemz'
            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
